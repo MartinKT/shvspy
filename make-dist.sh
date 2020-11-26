@@ -206,6 +206,6 @@ mkdir -p $ARTIFACTS_DIR
 
 tar -cvzf $ARTIFACTS_DIR/$DISTRO_NAME.tgz  -C $WORK_DIR ./$DISTRO_NAME
 
-rsync -av $SRC_DIR/$APP_NAME/distro/shvspy.AppDir/* $DIST_DIR/
+rsync -av $SRC_DIR/distro/shvspy.AppDir/* $DIST_DIR/
 ARCH=x86_64 $APP_IMAGE_TOOL $DIST_DIR $ARTIFACTS_DIR/$APP_NAME-${APP_VER}-linux64.AppImage
 
