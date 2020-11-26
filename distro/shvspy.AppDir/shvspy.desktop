@@ -1,4 +1,5 @@
 [Desktop Entry]
+Categories=Development;
 Comment[en_US]=
 Comment=
 Exec=shvspy
@@ -11,7 +12,6 @@ Name=ShvSpy
 Path=
 StartupNotify=true
 Terminal=false
-TerminalOptions=
 Type=Application
 X-DBUS-ServiceName=
 X-DBUS-StartupType=
