@@ -103,7 +103,7 @@ fi
 
 
 if [ -z $APP_VER ]; then
-	APP_VER=`grep APP_VERSION $SRC_DIR/shvspy/shvspy/src/appversion.h | cut -d\" -f2`
+	APP_VER=`grep APP_VERSION $SRC_DIR/shvspy/src/appversion.h | cut -d\" -f2`
 	echo "Distro version not specified, deduced from source code: $APP_VER" >&2
 	#exit 1
 fi
