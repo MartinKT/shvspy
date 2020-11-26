@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
+      with:
+        submodules: recursive
+
     - name: Cache Qt
       id: cache-qt
       uses: actions/cache@v2
@@ -38,7 +40,8 @@ jobs:
     - name: Build AppImage
       run: |
         mkdir ./build
-        ./shvspy/make-dist.sh --src-dir . --qt-dir ${Qt5_DIR} --work-dir ./build --appimage-tool /opt/appimagetool-x86_64.AppImage 
+        pwd
+        ./make-dist.sh --src-dir . --qt-dir ${Qt5_DIR} --work-dir ./build --appimage-tool /opt/appimagetool-x86_64.AppImage 
         
     - name: Save AppImage
       uses: actions/upload-artifact@v2
@@ -61,6 +64,8 @@ jobs:
         
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
       
     - name: Cache Libs
       id: cache-libs
