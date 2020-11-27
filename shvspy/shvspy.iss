@@ -7,7 +7,9 @@
 #ifndef VERSION
 #define VERSION "0.0.1"
 #endif
+#ifndef QT_DIR
 #define QT_DIR "C:\Qt\5.13.2\mingw73_64"
+#endif
 #define MINGW_DIR "C:\Qt\Tools\mingw730_64"
 ;#define PSQL_DIR "C:\app\pgsql32"
 
