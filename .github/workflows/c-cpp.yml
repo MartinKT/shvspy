@@ -130,7 +130,7 @@ jobs:
         dir "C:\Program Files (x86)\Inno Setup 6"
         cd
         dir
-        "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "/DVERSION=%VERSION%" "/DQT_DIR=%Qt5_Dir%" "/DPSQL_DIR=C:\msys64\mingw64" "/DSSL_DIR=C:\msys64\mingw64" shvspy/shvspy/shvspy.iss
+        "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "/DVERSION=%VERSION%" "/DQT_DIR=%Qt5_Dir%" "/DPSQL_DIR=C:\msys64\mingw64" "/DSSL_DIR=C:\msys64\mingw64" shvspy/shvspy.iss
       shell: cmd
 
     - name: Save setup
