@@ -127,9 +127,6 @@ jobs:
     - name: Create installer
       run: |
         choco upgrade innosetup --no-progress
-        dir "C:\Program Files (x86)\Inno Setup 6"
-        cd
-        dir
         "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "/DVERSION=%VERSION%" "/DQT_DIR=%Qt5_Dir%" "/DPSQL_DIR=C:\msys64\mingw64" "/DSSL_DIR=C:\msys64\mingw64" shvspy/shvspy.iss
       shell: cmd
 
@@ -137,4 +134,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: shvspy-elektroline-setup.exe
-        path: _inno\shvspy\shvspy-elektroline-setup.exe
+        path: _inno\shvspy\shvspy-elektroline--setup.exe
