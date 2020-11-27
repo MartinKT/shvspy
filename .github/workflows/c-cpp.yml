@@ -136,5 +136,5 @@ jobs:
     - name: Save setup
       uses: actions/upload-artifact@v2
       with:
-        name: shvspy-${{ env.VERSION }}-win64-setup.exe
-        path: _inno\shvspy\shvspy-${{ env.VERSION }}-win64-setup.exe
+        name: shvspy-elektroline-setup.exe
+        path: _inno\shvspy\shvspy-elektroline-setup.exe
