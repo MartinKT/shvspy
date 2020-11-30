@@ -73,21 +73,12 @@ jobs:
       with:
         path: |
           C:/msys64/mingw64/bin/libcrypto-1_1-x64.dll
-          C:/msys64/mingw64/bin/libssl-1_1-x64.dll
           C:/msys64/mingw64/bin/libiconv-2.dll
           C:/msys64/mingw64/bin/libintl-8.dll
           C:/msys64/mingw64/bin/libxml2-2.dll
           C:/msys64/mingw64/bin/liblzma-5.dll
           C:/msys64/mingw64/bin/zlib1.dll
-          C:/msys64/mingw64/bin/libpq.dll
         key: ${{ runner.os }}-Libraries
-
-    - name: Get OpenSSL and PostgreSQL libraries
-      if: steps.cache-libs.outputs.cache-hit != 'true'
-      run: |
-        C:/msys64/usr/bin/pacman -Sy --noconfirm
-        C:/msys64/usr/bin/pacman -S mingw-w64-x86_64-openssl mingw-w64-x86_64-postgresql --noconfirm
-      shell: cmd
 
     - name: Cache Qt
       id: cache-qt
@@ -127,7 +118,7 @@ jobs:
     - name: Create installer
       run: |
         choco upgrade innosetup --no-progress
-        "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "/DVERSION=%VERSION%" "/DQT_DIR=%Qt5_Dir%" "/DPSQL_DIR=C:\msys64\mingw64" "/DSSL_DIR=C:\msys64\mingw64" shvspy/shvspy.iss
+        "C:\Program Files (x86)\Inno Setup 6\iscc.exe" "/DVERSION=%VERSION%" "/DQT_DIR=%Qt5_Dir%"  shvspy/shvspy.iss
       shell: cmd
 
     - name: Save setup
