@@ -72,7 +72,6 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          C:/msys64/mingw64/bin/libcrypto-1_1-x64.dll
           C:/msys64/mingw64/bin/libiconv-2.dll
           C:/msys64/mingw64/bin/libintl-8.dll
           C:/msys64/mingw64/bin/libxml2-2.dll
@@ -113,7 +112,7 @@ jobs:
         done
 
     - name: Get app version
-      run: echo "VERSION=`grep APP_VERSION shvspy/shvspy/src/appversion.h | cut -d\\" -f2`" >> $GITHUB_ENV
+      run: echo "VERSION=`grep APP_VERSION shvspy/src/version.h | cut -d\\" -f2`" >> $GITHUB_ENV
 
     - name: Create installer
       run: |
@@ -124,5 +123,5 @@ jobs:
     - name: Save setup
       uses: actions/upload-artifact@v2
       with:
-        name: shvspy-elektroline-setup.exe
-        path: _inno\shvspy\shvspy-elektroline--setup.exe
+        name: shvspy-elektroline-${{ env.VERSION }}-setup.exe
+        path: _inno\shvspy\shvspy-elektroline-${{ env.VERSION }}-setup.exe
